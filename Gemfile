@@ -10,6 +10,8 @@ gem 'webpacker', github: 'rails/webpacker'
 gem 'pg'
 gem 'puma'
 gem 'sassc-rails'
+gem 'haml-rails'
+gem 'hamlit'
 
 gem 'uglifier'
 gem 'turbolinks', '~> 5'
