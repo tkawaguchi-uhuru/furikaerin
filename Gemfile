@@ -20,7 +20,7 @@ gem 'jb'
 group :development, :test do
   gem 'pry-byebug'
   gem 'capybara'
-  gem 'phantomjs'
+  gem 'poltergeist'
 end
 
 group :development do
