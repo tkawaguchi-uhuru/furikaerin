@@ -22,6 +22,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'factory_girl_rails'
 end
 
 group :development do
