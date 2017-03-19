@@ -1,4 +1,6 @@
 class Board < ApplicationRecord
+  has_many :categories
+
   validates :key, presence: true, length: { is: 10 }
 
   before_validation :set_key
