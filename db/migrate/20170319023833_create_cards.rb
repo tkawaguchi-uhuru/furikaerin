@@ -3,6 +3,7 @@ class CreateCards < ActiveRecord::Migration[5.1]
     create_table :cards do |t|
       t.references :board, foreign_key: true
       t.references :category, foreign_key: true
+      t.string :key, null: false, index: true
       t.text :content
 
       t.timestamps
