@@ -1,1 +1,5 @@
 %h1 Dashboard
+
+%ul
+  %li= link_to 'Create new KPT board', kpt_boards_path, method: :post
+  = render partial: 'boards/board', collection: @boards, layout: 'list'
