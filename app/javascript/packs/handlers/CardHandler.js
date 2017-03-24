@@ -26,7 +26,7 @@ export default class CardHandler {
   }
 
   submitUpdateForm(text) {
-    this.updateForm.querySelector('.js-card-form-text-field').value = text;
+    this.updateForm.querySelector('.js-card-form-content-field').value = text;
     this.updateForm.querySelector('input[type="submit"]').click();
   }
 

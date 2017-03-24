@@ -56,6 +56,12 @@ export default class CardsHandler {
       this.resetElementHandler(this.dragSource.querySelector('.js-card'))
       this.resetElementHandler(e.currentTarget.querySelector('.js-card'))
     }
+
+    let cardKey = e.currentTarget.querySelector('.js-card').dataset.key;
+    let cardForm = document.querySelector(`.js-card-update-form[data-key="${cardKey}"]`);
+
+    cardForm.querySelector('.js-card-form-rank-field').value = e.currentTarget.dataset.index;
+    cardForm.querySelector('input[type="submit"]').click();
   }
 
   dragEndListener(e) {

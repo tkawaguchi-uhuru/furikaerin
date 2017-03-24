@@ -1,6 +1,6 @@
 class Board < ApplicationRecord
   include KeyColumnGeneratable
 
-  has_many :categories
-  has_many :cards
+  has_many :cards, dependent: :delete_all
+  has_many :categories, dependent: :delete_all
 end
