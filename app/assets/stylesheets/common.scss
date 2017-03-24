@@ -2,6 +2,15 @@
   display: none;
 }
 
+.card-container {
+  cursor: move;
+  padding: 20px;
+
+  &.over {
+    border: 2px dashed #000;
+  }
+}
+
 .card {
   display: inline-block;
   min-width: 2rem;

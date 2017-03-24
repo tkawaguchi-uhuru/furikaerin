@@ -1,0 +1,5 @@
+= form_with(model: card, class: 'hidden js-card-update-form', data: { key: card.key }) do |f|
+  = f.text_field(:content, class: 'js-card-form-text-field')
+  = f.submit
+= form_with(model: card, class: 'hidden js-card-delete-form', data: { key: card.key }, method: :delete) do |f|
+  = f.submit

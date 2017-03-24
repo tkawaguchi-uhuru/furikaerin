@@ -1,12 +1,8 @@
-import Card from '../data/Card';
-import CardHandler from '../handlers/CardHandler';
+import CardsHandler from '../handlers/CardsHandler';
 
 export default class CardPage {
   constructor() {
-    Array.apply([], document.querySelectorAll('.js-card')).forEach((element) => {
-      let card = new Card(element.dataset.key);
-      let cardHandler = new CardHandler(card, element);
-      cardHandler.listen();
-    });
+    let cardsHandler = new CardsHandler(Array.apply([], document.querySelectorAll('.js-card-container')));
+    cardsHandler.listen();
   }
 }

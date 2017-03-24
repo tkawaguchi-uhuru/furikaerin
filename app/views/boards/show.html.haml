@@ -6,3 +6,6 @@
     %ul
       = render partial: 'cards/card', collection: category.cards.order(:id), layout: 'list'
       %li= link_to 'Add', board_category_cards_path(@board, category), method: :create
+
+%ul
+  = render partial: 'cards/card_form', collection: @board.cards.order(:id), layout: 'list', as: :card
