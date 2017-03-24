@@ -5,6 +5,5 @@ document.addEventListener('turbolinks:load', () => {
   let router = new Router;
 
   router.add('^/boards/', () => { new pages.CardPage() });
-
   router.create();
 });
