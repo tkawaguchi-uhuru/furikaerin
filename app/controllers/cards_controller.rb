@@ -5,17 +5,17 @@ class CardsController < ApplicationController
 
   def create
     @category.cards << @board.cards.build
-    redirect_back fallback_location: root_path, turbolinks: :advance
+    redirect_back fallback_location: root_path, turbolinks: :replace
   end
 
   def update
     @card.update(card_params)
-    redirect_back fallback_location: root_path, turbolinks: :advance
+    redirect_back fallback_location: root_path, turbolinks: :replace
   end
 
   def destroy
     @card.destroy
-    redirect_back fallback_location: root_path, turbolinks: :advance
+    redirect_back fallback_location: root_path, turbolinks: :replace
   end
 
   private
