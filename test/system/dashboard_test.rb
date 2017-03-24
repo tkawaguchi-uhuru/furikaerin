@@ -5,7 +5,7 @@ class UsersTest < ApplicationSystemTestCase
     visit root_url
 
     within 'body' do
-      assert has_content? 'hi'
+      assert has_content? 'Dashboard'
     end
   end
 end

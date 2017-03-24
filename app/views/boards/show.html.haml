@@ -1,1 +1,8 @@
 = render 'board', board: @board
+
+- @board.categories.order(:id).each do |category|
+  %section
+    %h2= category.title
+    %ul
+      = render partial: 'cards/card', collection: category.cards.order(:id), layout: 'list'
+      %li= link_to 'Add', board_category_cards_path(@board, category), method: :create
