@@ -34,4 +34,9 @@ group :development do
   gem 'spring-watcher-listen'
 end
 
+group :production do
+  gem 'dalli'
+  gem 'memcachier'
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
