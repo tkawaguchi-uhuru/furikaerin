@@ -33,6 +33,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:content, :rank_position)
+    params.require(:card).permit(:content, :rank_position, :category_id)
   end
 end

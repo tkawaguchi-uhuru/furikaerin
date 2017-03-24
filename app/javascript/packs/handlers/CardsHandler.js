@@ -61,6 +61,7 @@ export default class CardsHandler {
     let cardForm = document.querySelector(`.js-card-update-form[data-key="${cardKey}"]`);
 
     cardForm.querySelector('.js-card-form-rank-field').value = e.currentTarget.dataset.index;
+    cardForm.querySelector('.js-card-form-category-field').value = e.currentTarget.dataset.categoryId;
     cardForm.querySelector('input[type="submit"]').click();
   }
 

@@ -1,6 +1,7 @@
 = form_with(model: card, class: 'js-card-update-form', data: { key: card.key }) do |f|
   = f.text_field(:content, class: 'js-card-form-content-field')
   = f.text_field(:rank_position, class: 'js-card-form-rank-field')
+  = f.text_field(:category_id, class: 'js-card-form-category-field')
   = f.submit
 = form_with(model: card, class: 'js-card-delete-form', data: { key: card.key }, method: :delete) do |f|
   = f.submit
