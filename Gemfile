@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'turbolinks', '~> 5'
 gem 'jb'
 gem 'ranked-model'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'pry-byebug'
