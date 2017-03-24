@@ -17,6 +17,7 @@ gem 'hamlit'
 gem 'uglifier'
 gem 'turbolinks', '~> 5'
 gem 'jb'
+gem 'ranked-model'
 
 group :development, :test do
   gem 'pry-byebug'
