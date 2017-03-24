@@ -1,0 +1,39 @@
+@mixin box {
+  font-size: $font-size-medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0 -5px 20px 0 #7d9ba2 inset,0 0 3px 0 #73939b;
+
+  &.box_active {
+    background: #ff3;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: $base-text-color;
+  }
+}
+
+@mixin item-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px auto;
+}
+
+@mixin hover-style {
+  &:active {
+    background: #ff3;
+  }
+}

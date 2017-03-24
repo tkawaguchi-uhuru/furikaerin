@@ -1,0 +1,39 @@
+* {
+  touch-action: manipulation;
+}
+
+html {
+  @include font-main;
+  font-weight: 100;
+  user-select: none;
+}
+
+body {
+  @include font-main;
+  font-size: 1.6rem;
+  overflow: hidden;
+  min-height: 100vh;
+  color: $base-text-color;
+  background: $background-color;
+}
+
+[type=image],
+img.sprite {
+  user-select: none;
+
+  -webkit-tap-highlight-color: transparent;
+  object-fit: none;
+  object-position: 0 0;
+
+  &:active {
+    object-position: 0 100%;
+  }
+}
+
+.main-container {
+  overflow: auto;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,54 @@
+// http://qiita.com/RinoTsuka/items/4181efd43d072e246519
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Bold');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'rounded-mplus-1c-light';
+  src: font-url('rounded-mplus-1c-light.eot');
+  src: font-url('rounded-mplus-1c-light.eot?#iefix') format('embedded-opentype'),
+  font-url('rounded-mplus-1c-light.woff') format('woff'),
+  font-url('rounded-mplus-1c-light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'rounded-mplus-1c-bold';
+  src: font-url('rounded-mplus-1c-bold.eot');
+  src: font-url('rounded-mplus-1c-bold.eot?#iefix') format('embedded-opentype'),
+  font-url('rounded-mplus-1c-bold.woff') format('woff'),
+  font-url('rounded-mplus-1c-bold.ttf') format('truetype');
+}
+
+@mixin font-main {
+  font-family: 'rounded-mplus-1c-light', '-apple-system', 'Yu Gothic', YuGothic, Verdana, Meiryo, 'M+ 1p', sans-serif;
+  /* IE10以上 */
+  @media all and (-ms-high-contrast: none) {
+    font-family: Verdana, Meiryo, sans-serif;
+  }
+}
