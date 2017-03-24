@@ -2,9 +2,21 @@
   display: none;
 }
 
+.board-container {
+  display: flex;
+}
+
+.category-container {
+  min-width: 100px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+
 .card-container {
   cursor: move;
-  padding: 20px;
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #ededed;
 
   &.over {
     border: 2px dashed #000;
@@ -13,5 +25,6 @@
 
 .card {
   display: inline-block;
-  min-width: 2rem;
+  width: 100%;
+  background: #fff;
 }
