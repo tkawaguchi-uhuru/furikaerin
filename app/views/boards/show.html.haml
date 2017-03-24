@@ -1,4 +1,4 @@
-= render 'board', board: @board
+= link_to 'Show as Markdown', board_path(@board, format: :md), target: '_blank', rel: 'noopener noreferrer'
 
 %section.board-container
   - @board.categories.order(:id).each do |category|
