@@ -4,7 +4,7 @@ class CardsController < ApplicationController
   before_action :set_category, only: %i(create)
 
   def create
-    @card = @category.cards << @board.cards.build
+    @category.cards << @board.cards.build
     redirect_back fallback_location: root_path
   end
 
