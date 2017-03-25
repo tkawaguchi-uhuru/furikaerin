@@ -38,6 +38,7 @@ end
 group :production do
   gem 'dalli'
   gem 'memcachier'
+  gem 'redis'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
