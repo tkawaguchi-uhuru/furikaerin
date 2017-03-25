@@ -2,12 +2,14 @@ export default class CardHandler {
   constructor(card, element) {
     this.card = card;
     this.element = element;
+    this.deleteOnEmpty = false;
     this.updateForm = document.querySelector(`.js-card-update-form[data-key="${card.key}"]`);
     this.deleteForm = document.querySelector(`.js-card-delete-form[data-key="${card.key}"]`);
   }
 
   listen() {
     this.element.addEventListener('keydown', (e) => { this.keyDownListener(e) }, false);
+    this.element.addEventListener('keydown', (e) => { this.deleteKeyDownListener(e) }, false);
   }
 
   keyDownListener(e) {
@@ -17,11 +19,35 @@ export default class CardHandler {
     e.preventDefault();
 
     let text = e.currentTarget.innerText;
+    text = text.replace(/\n/g, '');
 
     if (text == '') {
-      this.submitDeleteForm(text)
+      this.submitDeleteForm();
     } else {
-      this.submitUpdateForm(text)
+      this.submitUpdateForm(text);
+    }
+  }
+
+  deleteKeyDownListener(e) {
+    if (e.which != 8 && e.which != 46) {
+      return;
+    }
+
+    let text = e.currentTarget.innerText;
+    text = text.replace(/\n/g, '');
+
+    if (text == '' && this.checkTwiceDeleteImmediately()) {
+      this.submitDeleteForm();
+    }
+  }
+
+  checkTwiceDeleteImmediately() {
+    if (!this.deleteOnEmpty) {
+      this.deleteOnEmpty = true;
+      setTimeout(() => { this.deleteOnEmpty = false }, 300);
+      return false;
+    } else {
+      return true;
     }
   }
 
@@ -30,7 +56,7 @@ export default class CardHandler {
     this.updateForm.querySelector('input[type="submit"]').click();
   }
 
-  submitDeleteForm(text) {
+  submitDeleteForm() {
     this.deleteForm.querySelector('input[type="submit"]').click();
   }
 }
