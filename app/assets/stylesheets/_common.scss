@@ -23,6 +23,14 @@ img.sprite {
   }
 }
 
+a {
+  color: #3b88c3;
+
+  &:hover {
+    color: #0091ff;
+  }
+}
+
 .hidden {
   display: none;
 }
