@@ -55,9 +55,12 @@ export default class CardsHandler {
       let newRank = e.currentTarget.dataset.index;
       let newCategory = e.currentTarget.dataset.categoryId;
 
-      this.dragSource.innerHTML = e.currentTarget.innerHTML;
+      if (this.dragSource.dataset.categoryId == e.currentTarget.dataset.categoryId) {
+        this.dragSource.innerHTML = e.currentTarget.innerHTML;
+        this.resetElementHandler(this.dragSource.querySelector('.js-card'))
+      }
+
       e.currentTarget.innerHTML = e.dataTransfer.getData('text/html');
-      this.resetElementHandler(this.dragSource.querySelector('.js-card'))
       this.resetElementHandler(e.currentTarget.querySelector('.js-card'))
 
       let cardForm = document.querySelector(`.js-card-update-form[data-key="${cardKey}"]`);
