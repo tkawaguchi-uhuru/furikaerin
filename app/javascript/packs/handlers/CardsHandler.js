@@ -51,18 +51,21 @@ export default class CardsHandler {
     e.stopPropagation();
 
     if (this.dragSource != e.currentTarget) {
+      let cardKey = this.dragSource.querySelector('.js-card').dataset.key;
+      let newRank = e.currentTarget.dataset.index;
+      let newCategory = e.currentTarget.dataset.categoryId;
+
       this.dragSource.innerHTML = e.currentTarget.innerHTML;
       e.currentTarget.innerHTML = e.dataTransfer.getData('text/html');
       this.resetElementHandler(this.dragSource.querySelector('.js-card'))
       this.resetElementHandler(e.currentTarget.querySelector('.js-card'))
+
+      let cardForm = document.querySelector(`.js-card-update-form[data-key="${cardKey}"]`);
+      cardForm.querySelector('.js-card-form-rank-field').value = newRank;
+      cardForm.querySelector('.js-card-form-category-field').value = newCategory;
+      cardForm.querySelector('input[type="submit"]').click();
     }
 
-    let cardKey = e.currentTarget.querySelector('.js-card').dataset.key;
-    let cardForm = document.querySelector(`.js-card-update-form[data-key="${cardKey}"]`);
-
-    cardForm.querySelector('.js-card-form-rank-field').value = e.currentTarget.dataset.index;
-    cardForm.querySelector('.js-card-form-category-field').value = e.currentTarget.dataset.categoryId;
-    cardForm.querySelector('input[type="submit"]').click();
   }
 
   dragEndListener(e) {

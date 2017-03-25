@@ -1,4 +1,4 @@
-- cache card do
+- cache [card, card_counter] do
   .card-container.js-card-container{ draggable: 'true', data: { index: card_counter, category: { id: card.category_id } } }
     .card.js-card{ data: { key: card.key }, contenteditable: 'true'}
       = card.content
