@@ -1,5 +1,3 @@
-import Caret from '../ui/Caret';
-
 export default class CardHandler {
   constructor(card, element) {
     this.card = card;
@@ -7,29 +5,15 @@ export default class CardHandler {
     this.deleteOnEmpty = false;
     this.updateForm = document.querySelector(`.js-card-update-form[data-key="${card.key}"]`);
     this.deleteForm = document.querySelector(`.js-card-delete-form[data-key="${card.key}"]`);
-    this.caret = new Caret(this.element);
   }
 
   listen() {
-    this.element.addEventListener('focus', (e) => { this.focusListener(e) }, false);
-    this.element.addEventListener('mouseup', (e) => { this.touchListener(e) }, false);
-    this.element.addEventListener('touchend', (e) => { this.touchListener(e) }, false);
-    this.element.addEventListener('keyup', (e) => { this.touchListener(e) }, false);
     this.element.addEventListener('keydown', (e) => { this.keyDownListener(e) }, false);
     this.element.addEventListener('keydown', (e) => { this.deleteKeyDownListener(e) }, false);
   }
 
-  focusListener(e) {
-    window.localStorage.setItem('focus.cardKey', this.card.key);
-  }
-
-  touchListener(e) {
-    window.localStorage.setItem('focus.position', this.caret.position);
-  }
-
   keyDownListener(e) {
     let text = e.currentTarget.innerText;
-    window.localStorage.setItem('focus.text', text);
 
     if (e.which != 13) {
       return;
@@ -70,15 +54,13 @@ export default class CardHandler {
   }
 
   submitUpdateForm(text) {
-    window.localStorage.removeItem('focus.cardKey');
-    window.localStorage.removeItem('focus.text');
     this.updateForm.querySelector('.js-card-form-content-field').value = text;
     this.updateForm.querySelector('input[type="submit"]').click();
+    this.element.blur();
   }
 
   submitDeleteForm() {
-    window.localStorage.removeItem('focus.cardKey');
-    window.localStorage.removeItem('focus.text');
     this.deleteForm.querySelector('input[type="submit"]').click();
+    this.element.blur();
   }
 }

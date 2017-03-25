@@ -1,5 +1,6 @@
 import CardsHandler from '../handlers/CardsHandler';
 import TurbolinksHandler from '../handlers/TurbolinksHandler';
+import BoardChannelHandler from '../handlers/BoardChannelHandler';
 
 export default class CardPage {
   constructor() {
@@ -8,5 +9,8 @@ export default class CardPage {
 
     let turbolinksHandler = new TurbolinksHandler();
     turbolinksHandler.listen();
+
+    let boardChannleHandler = new BoardChannelHandler(Array.apply([], document.querySelectorAll('.js-card')));
+    boardChannleHandler.listen();
   }
 }
