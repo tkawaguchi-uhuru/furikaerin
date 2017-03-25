@@ -8,8 +8,21 @@ export default class CardHandler {
   }
 
   listen() {
+    this.element.addEventListener('blur', (e) => { this.blurListener(e) }, false);
     this.element.addEventListener('keydown', (e) => { this.keyDownListener(e) }, false);
     this.element.addEventListener('keydown', (e) => { this.deleteKeyDownListener(e) }, false);
+  }
+
+  blurListener(e) {
+    let text = e.currentTarget.innerText;
+
+    text = text.replace(/\n/g, '');
+
+    if (text == '') {
+      this.submitDeleteForm();
+    } else {
+      this.submitUpdateForm(text);
+    }
   }
 
   keyDownListener(e) {
