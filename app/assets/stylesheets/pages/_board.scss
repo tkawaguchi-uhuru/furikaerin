@@ -52,6 +52,9 @@
     font-size: 2.2rem;
     display: inline-block;
     width: 100%;
+    cursor: text;
+    -webkit-user-select: text;
+            user-select: text;
   }
 
   .add-card-link {

@@ -11,7 +11,7 @@ export default class CardHandler {
   }
 
   keyDownListener(e) {
-    if (e.key != 'Enter') {
+    if (e.which != 13) {
       return;
     }
     e.preventDefault();
