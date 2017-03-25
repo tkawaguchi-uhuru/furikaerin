@@ -1,24 +1,17 @@
-# README
+# Furikaerin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+KPT tool for your team.
 
-Things you may want to cover:
+# Development
 
-* Ruby version
+```
+bundle exec rails db:setup
+yarn
+bin/server
+```
 
-* System dependencies
+# Test
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle exec rails test
+```
