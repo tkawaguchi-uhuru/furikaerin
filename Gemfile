@@ -32,6 +32,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'foreman'
 end
 
 group :production do
