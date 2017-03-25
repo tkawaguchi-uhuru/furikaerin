@@ -1,18 +1,11 @@
-* {
-  touch-action: manipulation;
-}
-
 html {
   @include font-main;
   font-weight: 100;
-  user-select: none;
 }
 
 body {
   @include font-main;
   font-size: 1.6rem;
-  overflow: hidden;
-  min-height: 100vh;
   color: $base-text-color;
   background: $background-color;
 }
@@ -28,10 +21,6 @@ img.sprite {
   &:active {
     object-position: 0 100%;
   }
-}
-
-.main-container {
-  overflow: auto;
 }
 
 .hidden {
