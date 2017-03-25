@@ -56,4 +56,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.x.webpacker[:dev_server_host] = ENV.fetch('WEBPACKER_DEV_SERVER_HOST', 'http://localhost:8080')
+
+  config.action_cable.allowed_request_origins = [
+    /http:\/\/.*\.lvh\.me:.*/
+  ]
 end
