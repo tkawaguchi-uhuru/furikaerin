@@ -1,8 +1,32 @@
 #page-boards.page-show {
-  .show-as-markdown-link {
-    display: block;
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  .copy-link {
+    display: inline-block;
     margin: 20px;
-    text-align: right;
+
+    &:active {
+      animation: flash .25s;
+      opacity: 1;
+    }
+
+    @keyframes flash {
+      0% {
+        opacity: .2;
+      }
+      100% {
+        opacity: .99;
+      }
+    }
+  }
+
+  .show-as-markdown-link {
+    display: inline-block;
+    margin: 20px;
   }
 
   .category-title {
