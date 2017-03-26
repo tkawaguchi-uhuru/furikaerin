@@ -5,7 +5,7 @@ class UsersTest < ApplicationSystemTestCase
     visit root_url
 
     within 'body' do
-      assert has_content? 'Dashboard'
+      assert has_content? 'Create new KPT board'
     end
   end
 end

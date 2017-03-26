@@ -1,5 +1,5 @@
-%h1 Dashboard
-
-%ul
-  %li= link_to 'Create new KPT board', kpt_boards_path, method: :post
-  = render partial: 'boards/board', collection: @boards, layout: 'list'
+%main.main-container
+  = link_to kpt_boards_path, method: :post, class: 'create-kpt-board-link' do
+    %i.twa.twa-2x.twa-hatching-chick
+    .create-kpt-board-link__label
+      Create new KPT board

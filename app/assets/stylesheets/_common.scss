@@ -24,10 +24,10 @@ img.sprite {
 }
 
 a {
-  color: #3b88c3;
+  color: $link-text-color;
 
   &:hover {
-    color: #0091ff;
+    color: $link-hover-text-color;
   }
 }
 
