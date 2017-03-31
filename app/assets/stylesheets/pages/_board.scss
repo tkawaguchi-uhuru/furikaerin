@@ -64,6 +64,7 @@
   }
 
   .card-container {
+    position: relative;
     margin-bottom: 5px;
     padding: 20px;
     cursor: move;
@@ -86,6 +87,14 @@
     &:focus {
       border: 1px dotted #444;
     }
+  }
+
+  .card-action {
+    position: absolute;
+    right: 5px;
+    bottom: 1px;
+    cursor: pointer;
+    color: $link-text-color;
   }
 
   .add-card-link {

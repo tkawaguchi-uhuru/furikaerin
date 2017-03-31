@@ -5,12 +5,20 @@ export default class CardHandler {
     this.deleteOnEmpty = false;
     this.updateForm = document.querySelector(`.js-card-update-form[data-key="${card.key}"]`);
     this.deleteForm = document.querySelector(`.js-card-delete-form[data-key="${card.key}"]`);
+    this.deleteButton = this.element.parentNode.querySelector('.js-delete-action');
   }
 
   listen() {
+    this.element.addEventListener('focus', (e) => { this.focusListener(e) }, false);
     this.element.addEventListener('blur', (e) => { this.blurListener(e) }, false);
     this.element.addEventListener('keydown', (e) => { this.keyDownListener(e) }, false);
     this.element.addEventListener('keydown', (e) => { this.deleteKeyDownListener(e) }, false);
+    this.deleteButton.addEventListener('mousedown', (e) => { this.clickDeleteButtonLitener(e) }, false);
+    this.deleteButton.addEventListener('touchdown', (e) => { this.clickDeleteButtonLitener(e) }, false);
+  }
+
+  focusListener(e) {
+    this.deleteButton.classList.toggle('hidden');
   }
 
   blurListener(e) {
@@ -75,5 +83,13 @@ export default class CardHandler {
   submitDeleteForm() {
     this.deleteForm.querySelector('input[type="submit"]').click();
     this.element.blur();
+  }
+
+  clickDeleteButtonLitener(e) {
+    if (this.element.innerText == '') {
+      return;
+    }
+    this.updateForm.querySelector('input[type="submit"]').disabled = true;
+    this.submitDeleteForm();
   }
 }
