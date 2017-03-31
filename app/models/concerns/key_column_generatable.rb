@@ -3,7 +3,7 @@ module KeyColumnGeneratable
 
   included do
     validates :key, presence: true, length: { is: 10 }
-    before_validation :set_key
+    before_validation :set_key, on: :create
   end
 
   def to_key
