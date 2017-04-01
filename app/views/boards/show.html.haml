@@ -4,9 +4,9 @@
       %i.fa.fa-clipboard
       Copy this board URL
   %li
-    = link_to board_path(@board, format: :md), target: '_blank', rel: 'noopener noreferrer', class: 'show-as-markdown-link' do
-      %i.fa.fa-file-text-o
-      Show as Markdown
+    = link_to '#', class: 'copy-link js-copy-link', data: { clipboard_text: @board.markdown } do
+      %i.fa.fa-clipboard
+      Copy as Markdown
 
 %section.board-container
   - @board.categories.order(:id).each do |category|
