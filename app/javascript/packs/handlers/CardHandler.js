@@ -18,10 +18,11 @@ export default class CardHandler {
   }
 
   focusListener(e) {
-    this.deleteButton.classList.toggle('hidden');
+    this.deleteButton.classList.remove('hidden');
   }
 
   blurListener(e) {
+    this.deleteButton.classList.add('hidden');
     let text = e.currentTarget.innerText;
     if (text == this.card.content) {
       return;
