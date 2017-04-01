@@ -23,6 +23,9 @@ export default class CardHandler {
 
   blurListener(e) {
     let text = e.currentTarget.innerText;
+    if (text == this.card.content) {
+      return;
+    }
 
     text = text.replace(/\n/g, '');
 

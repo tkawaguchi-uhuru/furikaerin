@@ -20,7 +20,7 @@ export default class CardsHandler {
   }
 
   resetElementHandler(element) {
-    let card = new Card(element.dataset.key);
+    let card = new Card(element.dataset.key, element.innerText);
     let cardHandler = new CardHandler(card, element);
     cardHandler.listen();
   }
