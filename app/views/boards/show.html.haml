@@ -14,11 +14,12 @@
       %h2.category-title= category.title
       %ul.js-card-list.fusen-list
         = render partial: 'cards/card', collection: category.cards.rank(:rank), layout: 'list'
-      = link_to board_category_cards_path(@board, category), method: :post, remote: true, class: 'add-card-link' do
-        %i.twa.twa-2x.twa-hatching-chick
-        .add-card-link__label
-          = "Add to #{category.title}"
-          %i.twa.twa-arrow-heading-up
+      .add-card-link-container
+        = link_to board_category_cards_path(@board, category), method: :post, remote: true, class: 'add-card-link' do
+          %i.twa.twa-2x.twa-hatching-chick
+          .add-card-link__label
+            = "Add to #{category.title}"
+            %i.twa.twa-arrow-heading-up
 
 %ul.hidden
   = render partial: 'cards/card_form', collection: @board.cards.order(:id), layout: 'list', as: :card
