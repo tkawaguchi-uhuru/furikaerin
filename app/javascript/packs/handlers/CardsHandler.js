@@ -20,7 +20,7 @@ export default class CardsHandler {
   }
 
   resetElementHandler(element) {
-    let card = new Card(element.dataset.key);
+    let card = new Card(element.dataset.key, element.innerText);
     let cardHandler = new CardHandler(card, element);
     cardHandler.listen();
   }
@@ -39,6 +39,7 @@ export default class CardsHandler {
   }
 
   dragOverListener(e) {
+    e.currentTarget.classList.add('over');
     e.preventDefault(); // Necessary. Allows us to drop.
     e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
   }
@@ -48,6 +49,7 @@ export default class CardsHandler {
   }
 
   dropListener(e) {
+    e.currentTarget.classList.remove('over');
     e.stopPropagation();
 
     if (this.dragSource != e.currentTarget) {
