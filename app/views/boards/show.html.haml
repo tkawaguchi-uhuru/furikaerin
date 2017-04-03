@@ -10,7 +10,7 @@
 
 %section.board-container
   - @board.categories.order(:id).each do |category|
-    %section.category-container.fusen-container
+    %section.category-container.fusen-container{ data: { key: category.key } }
       %h2.category-title= category.title
       %ul.js-card-list.fusen-list
         = render partial: 'cards/card', collection: category.cards.rank(:rank), layout: 'list'

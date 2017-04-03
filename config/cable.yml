@@ -3,6 +3,7 @@ development:
 
 test:
   adapter: async
+  inline: true
 
 production:
   adapter: redis
