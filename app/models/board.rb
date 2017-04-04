@@ -5,6 +5,10 @@ class Board < ApplicationRecord
   has_many :categories, dependent: :delete_all
 
   def markdown
-    ApplicationController.render('boards/show.md.erb', assigns: { board: self })
+    @markdown ||= ApplicationController.render('boards/show.md.erb', assigns: { board: self })
+  end
+
+  def digest
+    @digest ||= Digest::SHA256.hexdigest(markdown)
   end
 end

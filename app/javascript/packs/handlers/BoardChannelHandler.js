@@ -33,6 +33,10 @@ export default class BoardChannelHandler {
   }
 
   received(data) {
+    if (data.digest == document.getElementById('js-board').dataset.digest) {
+      return;
+    }
+
     this.queues = [this.updateBoard];
     if (!this.focused) {
       this.dequeue();

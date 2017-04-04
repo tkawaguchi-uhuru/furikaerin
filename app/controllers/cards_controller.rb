@@ -5,17 +5,17 @@ class CardsController < ApplicationController
 
   def create
     @category.cards << @board.cards.build
-    head :ok
+    redirect_to board_url(@board), turbolinks: :replace
   end
 
   def update
     @card.update(card_params)
-    head :ok
+    redirect_to board_url(@card.board), turbolinks: :replace
   end
 
   def destroy
     @card.destroy
-    head :ok
+    redirect_to board_url(@card.board), turbolinks: :replace
   end
 
   private
