@@ -94,7 +94,9 @@ export default class CardHandler {
     if (this.element.innerText == '') {
       return;
     }
-    this.updateForm.querySelector('input[type="submit"]').disabled = true;
-    this.submitDeleteForm();
+    if (confirm('Are you sure to delete this?')) {
+      this.updateForm.querySelector('input[type="submit"]').disabled = true;
+      this.submitDeleteForm();
+    }
   }
 }
