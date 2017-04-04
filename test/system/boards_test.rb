@@ -20,7 +20,7 @@ class BoardsTest < ApplicationSystemTestCase
 
       @categories.each do |title, category|
         within ".category-container[data-key='#{category.key}']" do
-          card = find('.js-card-list>:last-child .js-card')
+          card = find('.js-new-card-form .js-new-card-content')
           card.native.send_keys("#{title} things!", :enter)
         end
       end

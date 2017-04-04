@@ -85,6 +85,7 @@ export default class CardHandler {
   }
 
   submitDeleteForm() {
+    this.element.parentNode.parentNode.classList.add('hidden');
     this.deleteForm.querySelector('input[type="submit"]').click();
     this.element.blur();
   }

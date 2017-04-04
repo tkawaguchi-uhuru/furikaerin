@@ -77,15 +77,19 @@
   .card {
     font-family: $font-bold;
     font-size: 2.2rem;
+    line-height: 44px;
     display: inline-block;
+    box-sizing: border-box;
     width: 100%;
+    padding: 0;
     cursor: text;
     -webkit-user-select: text;
             user-select: text;
     border: 1px solid transparent;
-
+    background: transparent;
     &:focus {
       border: 1px dotted #444;
+      outline: none;
     }
   }
 
@@ -96,6 +100,7 @@
     cursor: pointer;
     color: $link-text-color;
   }
+
   .add-card-link-container {
     display: inline-block;
   }
@@ -104,6 +109,7 @@
     font-size: 2rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   .add-card-link__label {

@@ -1,0 +1,5 @@
+.card-container
+  = form_with(model: Card.new, url: board_category_cards_path(category.board, category), class: 'js-new-card-form') do |f|
+    = f.text_field(:content, class: 'card js-new-card-content')
+    = f.hidden_field(:category_id, value: category.id)
+    = f.submit(nil, class: 'hidden')
