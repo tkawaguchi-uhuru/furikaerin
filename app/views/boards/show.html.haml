@@ -8,7 +8,7 @@
       %i.fa.fa-clipboard
       Copy as Markdown
 
-%section#js-board.board-container{ data: { digest: @board.digest } }
+%section.board-container
   - @board.categories.order(:id).each do |category|
     %section.category-container.fusen-container{ data: { key: category.key } }
       %h2.category-title= category.title

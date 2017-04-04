@@ -18,9 +18,7 @@ class Card < ApplicationRecord
   def send_notification_to_channel
     BoardChannel.broadcast_to(
       self.board,
-      {
-        digest: self.board.digest
-      }
+      {}
     )
   end
 end
