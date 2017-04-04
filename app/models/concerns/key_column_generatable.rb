@@ -17,8 +17,6 @@ module KeyColumnGeneratable
   private
 
   def set_key
-    begin
-      self.key = SecureRandom.hex(5)
-    end until self.class.where(key: self.key).count == 0
+    self.key = SecureRandom.hex(5)
   end
 end
