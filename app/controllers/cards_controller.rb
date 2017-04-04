@@ -4,7 +4,7 @@ class CardsController < ApplicationController
   before_action :set_category, only: %i(create)
 
   def create
-    @category.cards << @board.cards.build
+    @category.cards << @board.cards.build(card_params)
     head :ok
   end
 
