@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324063413) do
+ActiveRecord::Schema.define(version: 20170404100550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170324063413) do
     t.string "key", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["key"], name: "index_boards_on_key"
+    t.index ["key"], name: "index_boards_on_key", unique: true
   end
 
   create_table "cards", force: :cascade do |t|
@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 20170324063413) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "rank"
+    t.index ["board_id", "category_id", "rank"], name: "index_cards_on_board_id_and_category_id_and_rank"
     t.index ["board_id"], name: "index_cards_on_board_id"
     t.index ["category_id"], name: "index_cards_on_category_id"
-    t.index ["key"], name: "index_cards_on_key"
+    t.index ["key"], name: "index_cards_on_key", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -43,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170324063413) do
     t.datetime "updated_at", null: false
     t.index ["board_id", "title"], name: "index_categories_on_board_id_and_title", unique: true
     t.index ["board_id"], name: "index_categories_on_board_id"
-    t.index ["key"], name: "index_categories_on_key"
+    t.index ["key"], name: "index_categories_on_key", unique: true
   end
 
   add_foreign_key "cards", "boards"
