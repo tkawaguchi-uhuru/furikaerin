@@ -14,11 +14,8 @@ class BoardsTest < ApplicationSystemTestCase
     visit board_path(@board)
 
     within 'body' do
-      click_link('Add to keep')
-      click_link('Add to problem')
-      click_link('Add to try')
-
       @categories.each do |title, category|
+        click_link("Add to #{category.title}")
         within ".category-container[data-key='#{category.key}']" do
           card = find('.js-new-card-form .js-new-card-content')
           card.native.send_keys("#{title} things!", :enter)
