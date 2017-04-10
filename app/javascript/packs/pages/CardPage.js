@@ -2,6 +2,7 @@ import OpenNewCardFormsHandler from '../handlers/OpenNewCardFormsHandler';
 import CardsHandler from '../handlers/CardsHandler';
 import TurbolinksHandler from '../handlers/TurbolinksHandler';
 import BoardChannelHandler from '../handlers/BoardChannelHandler';
+import QRious from 'qrious';
 
 export default class CardPage {
   constructor() {
@@ -16,5 +17,11 @@ export default class CardPage {
 
     let boardChannleHandler = new BoardChannelHandler(Array.apply([], document.querySelectorAll('.js-prevent-sync-on-typing')));
     boardChannleHandler.listen();
+
+    let qrious = new QRious({
+      element: document.getElementById('js-qrcode'),
+      value: location.href,
+      size: 50
+    });
   }
 }
