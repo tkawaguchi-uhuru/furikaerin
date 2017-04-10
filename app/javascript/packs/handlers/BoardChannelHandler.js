@@ -14,6 +14,7 @@ export default class BoardChannelHandler {
   listen() {
     this.elements.forEach((element) => {
       element.addEventListener('focus', (e) => { this.focusListener(e)}, false);
+      element.addEventListener('keydown', (e) => { this.keydownListener(e)}, false);
       element.addEventListener('blur', (e) => { this.blurListener(e)}, false);
     });
 
@@ -41,6 +42,13 @@ export default class BoardChannelHandler {
 
   focusListener(e) {
     this.focused = true;
+  }
+
+  keydownListener(e) {
+    if (e.which != 13) {
+      return;
+    }
+    this.blurListener(null);
   }
 
   blurListener(e) {

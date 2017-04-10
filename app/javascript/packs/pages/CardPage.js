@@ -14,7 +14,7 @@ export default class CardPage {
     let turbolinksHandler = new TurbolinksHandler();
     turbolinksHandler.listen();
 
-    let boardChannleHandler = new BoardChannelHandler(Array.apply([], document.querySelectorAll('.js-card')));
+    let boardChannleHandler = new BoardChannelHandler(Array.apply([], document.querySelectorAll('.js-prevent-sync-on-typing')));
     boardChannleHandler.listen();
   }
 }
