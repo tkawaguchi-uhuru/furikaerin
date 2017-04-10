@@ -1,8 +1,7 @@
 %ul.menu
   %li
     = link_to '#', class: 'copy-link js-copy-link', data: { clipboard_text: board_url(@board) } do
-      %i.fa.fa-clipboard
-      Copy this board URL
+      %canvas#js-qrcode
   %li
     = link_to '#', class: 'copy-link js-copy-link', data: { clipboard_text: @board.markdown } do
       %i.fa.fa-clipboard
