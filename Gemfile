@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '>= 5.1'
-gem 'webpacker', github: 'rails/webpacker'
+gem 'webpacker'
 gem 'pg'
 gem 'puma'
 gem 'sassc-rails'
