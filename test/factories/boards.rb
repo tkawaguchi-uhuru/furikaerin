@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :board do
     trait :as_kpt do
       before(:create) do |board|

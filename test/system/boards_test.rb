@@ -2,7 +2,7 @@ require 'application_system_test_case'
 
 class BoardsTest < ApplicationSystemTestCase
   setup do
-    @board = FactoryGirl.create(:board, :as_kpt)
+    @board = FactoryBot.create(:board, :as_kpt)
     @categories = {
       keep: @board.categories.order(:id).first,
       problem: @board.categories.order(:id).second,

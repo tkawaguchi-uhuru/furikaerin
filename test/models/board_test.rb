@@ -2,7 +2,7 @@ require 'test_helper'
 
 class BoardTest < ActiveSupport::TestCase
   setup do
-    @board = FactoryGirl.create(:board)
+    @board = FactoryBot.create(:board)
   end
 
   test 'set key after create' do
