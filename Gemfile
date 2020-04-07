@@ -1,4 +1,4 @@
-ruby '2.5.1'
+ruby '2.6.6'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '>= 5.1'
+gem 'rails', '>= 6.0'
 gem 'webpacker'
 gem 'pg'
 gem 'puma'
@@ -40,5 +40,3 @@ group :production do
   gem 'memcachier'
   gem 'redis'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
