@@ -1,4 +1,11 @@
 Rails.application.configure do
+  # ActionDispatch::HostAuthorization
+  %w(
+    .lvh.me
+  ).each do |host|
+    config.hosts << host
+  end
+
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = true
 
