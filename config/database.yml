@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: furikaerin_production
-  username: furikaerin
-  password: <%= ENV['FURIKAERIN_DATABASE_PASSWORD'] %>
+  url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
+  # username: furikaerin
+  # password: <%= ENV['FURIKAERIN_DATABASE_PASSWORD'] %>
